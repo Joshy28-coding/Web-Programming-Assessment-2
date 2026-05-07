@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Planetarium — Explore the Milky Way</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="mars" href="planets/mars.html">
+    <link rel="earth" href="planets/earth.html">
+    <link rel="jupiter" href="planets/jupiter.html">
+    <link rel="neptune" href="planets/neptune.html">
+    <link rel="about us" href="about-us.html">
+    <link rel="icon" href="Pictures/earth.webp">
+</head>
+
+<body>
+     <!-- Ambient space music (shared across pages) -->
+    <audio id="ambience" loop preload="auto">
+    <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/ambienceaudio.MP3" type="audio/mpeg">
+    </audio>
+    <button id="ambienceToggle" class="ambience-toggle" aria-pressed="false"
+        aria-label="Play background music">
+    <span aria-hidden="true">🔇</span>
+    </button>
+    <script src="ambience.js"></script>
+
+    <!-- Background video animation for the landing page -->
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/Star%20loop%20new.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navigation bar directing to different sections of the site -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="logo"><a href="../index.html"><img src="Pictures/logo.png" alt="Big Planetarium home"></a></li>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#planets-heading">Planets</a></li>
+                <li><a href="#gallery-heading">Video Gallery</a></li>
+                <li class="right"><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Site header and title banner -->
+    <header class="space-container" role="banner">
+        <div class="content">
+            <h1>The Milky Way</h1>
+            <p>Experience the wonders of the universe</p>
+        </div>
+    </header>
+
+    <!-- Spinning Galaxy hero -->
+    <main id="main">
+        <div class="galaxy-container" aria-hidden="true">
+            <div class="galaxy" role="img" aria-label="Spinning illustration of the Milky Way galaxy"></div>
+        </div>
+
+        <!-- Introduction of the website -->
+        <section class="cool-introbox" aria-labelledby="intro-heading">
+            <h2 id="intro-heading">Welcome to the Milky Way!</h2>
+            <p>The Milky Way or Milky Way Galaxy is the galaxy that includes the Solar System, with the name
+                describing the galaxy's appearance from Earth: a hazy band of light seen in the night sky formed from
+                stars in other arms of the galaxy, which are so far away that they cannot be individually distinguished
+                by the naked eye.</p>
+            <p>It is estimated to contain 100-400 billion stars and at least that number of planets. The
+                Solar System is located at a radius of about 27,000 light-years (8.3 kpc) from the Galactic Center,
+                on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust.</p>
+            <p>(Wikipedia Contributors, 2019)</p>
+        </section>
+
+        <!-- Solar System navigation links to planet detail pages -->
+        <section aria-labelledby="planets-heading">
+            <div class="helpful-info">
+                <h2 id="planets-heading">Explore our Solar System</h2>
+                <p>Click a planet to learn more about it!</p>
+            </div>
+
+         <!--List of current planets -->
+            <div class="planets-container">
+                <a class="planet" id="mars" href="planets/mars.html" aria-label="Learn about Mars">Mars</a>
+                <a class="planet" id="earth" href="planets/earth.html" aria-label="Learn about Earth">Earth</a>
+                <a class="planet" id="jupiter" href="planets/jupiter.html" aria-label="Learn about Jupiter">Jupiter</a>
+                <a class="planet" id="neptune" href="planets/neptune.html" aria-label="Learn about Neptune">Neptune</a>
+            </div>
+        </section>
+
+        <!-- Video gallery section with NASA clips -->
+        <section class="gallery-section" aria-labelledby="gallery-heading">
+            <div class="helpful-info" style="margin-top:0;">
+                <h2 id="gallery-heading">Video Gallery</h2>
+            </div>
+            <p style="text-align:center; color:rgba(200,200,255,0.85);">Footage courtesy of online soruces (NASA, BBC, National Geographic). Click
+                a video to play.</p>
+            <ul class="gallery-grid" id="galleryGrid" role="list"></ul>
+        </section>
+    </main>
+
+    <!-- Video content and overlay when selecting the content-->
+    <!-- Originally used the simple 'video' tag but due to difficulties with online hosting, I switched it to iframe for direct embed. (Live saver) -->
+    <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close video">&times;</button>
+            <iframe
+            id="modalVideo"
+            src=""
+            title="Video player"
+            allow="autoplay; encrtypted-media"
+            allowfullscreen>
+            </iframe>
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">    
+        <p>&copy; Big Planetarium — Bristol. Educational use. Video and image content credit: NASA / ESA / BBC.</p>
+    </footer>
+
+    <script>
+        // Video gallery data — NASA clips from youtube (Organized and assigned titles).
+        const iframe = [
+            {
+                title: "Earth and Moon from Space",
+                desc: "Earth and Moon views from the Internationals Space Station - Ignis mission timelapses",
+                poster: "https://www.nasa.gov/wp-content/uploads/2022/05/eo_pe_iss062e117852_sm.png?w=600",
+                src: "https://www.youtube.com/embed/5TnXCILNVV0"
+            },
+            {
+                title: "What's it like in Mars?",
+                desc: "High quality footage of the surface of Mars.",
+                poster: "https://news.mit.edu/sites/default/files/images/202409/MIT-MissMars-01-press.jpg",
+                src: "https://www.youtube.com/embed/Vy_RPd0rblI"
+            },
+            {
+                title: "Jupiter — Juno Flyby",
+                desc: "NASA's Juno spacecraft passing over Jupiter.",
+                poster: "https://static.scientificamerican.com/sciam/cache/file/26DD36CB-EA5C-472C-A9EA5FCBA35D1F12_source.jpg",
+                src: "https://www.youtube.com/embed/Bw0IxexIiIw"
+            },
+            {
+                title: "The Sun in 4K",
+                desc: "The Solar Dynamics Observatory captures the Sun's surface in high detail.",
+                poster: "https://images.nationalgeographic.org/image/upload/v1638882786/EducationHub/photos/sun-blasts-a-m66-flare.jpg",
+                src: "https://www.youtube.com/embed/6tmbeLTHC_0"
+            },
+            {
+                title: "The Incredible Cassini Mission",
+                desc: "Cassini's final approach to Saturn",
+                poster: "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2004/06/cassini_approaches_saturn/9830950-3-eng-GB/Cassini_approaches_Saturn_pillars.jpg",
+                src: "https://www.youtube.com/embed/68vxYRAony8"
+            },
+            {
+                title: "Hubble Deep Field",
+                desc: "A Photograph of the deepest view of the universe.",
+                poster: "https://science.nasa.gov/wp-content/uploads/2023/04/hubble-ultra-deep-field-jpg.webp",
+                src: "https://www.youtube.com/embed/WRHIGuoH6ic"
+            }
+        ];
+
+        // Building Gallery grid dynamically from the video data array, creating accessible buttons for each video card.
+        const grid = document.getElementById('galleryGrid');
+        iframe.forEach((v, i) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <button class="video-card" data-index="${i}" aria-label="Play video: ${v.title}">
+                    <div class="video-thumb">
+                        <img src="${v.poster}" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <span class="play-icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="video-info">
+                        <h3>${v.title}</h3>
+                        <p>${v.desc}</p>
+                    </div>
+                </button>`;
+            grid.appendChild(li);
+        });
+
+        // Video overlay(Modal) functionality: Open the modal with the correct video and information when a video card is clicked, and ensure accessibility features such as focus management and keyboard controls are implemented.
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeBtn = document.getElementById('modalClose');
+        let lastFocused = null;
+
+        function openModal(i) {
+            const v = iframe[i];
+            lastFocused = document.activeElement;
+            modalTitle.textContent = v.title;
+            modalDesc.textContent = v.desc;
+            modalVideo.src = v.src + "?autoplay=1";
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+            modalVideo.removeAttribute('src');
+            if (lastFocused) lastFocused.focus();
+        }
+
+        grid.addEventListener('click', (e) => {
+            const card = e.target.closest('.video-card');
+            if (card) openModal(parseInt(card.dataset.index, 10));
+        });
+
+        // Close modal when clicking the close button, clicking outside the modal content, or pressing the Escape key.
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        // Allow closing the modal with the Escape key for better accessibility.
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+        });
+    </script>
+</body>
+</html>
+
+<!-- Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol -->
+    <!-- Josh C. Was here -->

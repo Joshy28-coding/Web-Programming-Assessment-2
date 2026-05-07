@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Planetarium — About us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="icon" href="Pictures/earth.webp">
+
+    <!-- Ambient space music (shared across pages) -->
+    <audio id="ambience" loop preload="auto">
+    <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/ambienceaudio.MP3" type="audio/mpeg">
+    </audio>
+    <button id="ambienceToggle" class="ambience-toggle" aria-pressed="false"
+        aria-label="Play background music">
+    <span aria-hidden="true">🔇</span>
+    </button>
+    <script src="./ambience.js"></script>
+</head>
+
+<body>
+    <!-- Background video animation for the landing page -->
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/Star%20loop%20new.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navigation bar directing to different sections of the site -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="logo"><a href="index.html"><img src="Pictures/logo.png" alt="Big Planetarium home"></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#planets-heading">Planets</a></li>
+                <li><a href="index.html#gallery-heading">Video Gallery</a></li>
+                <li class="right"><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Simple about us section (Didn't have enough time to implement a solo page.) -->
+    <!-- Containing references and contact information -->
+    <div class="aboutus" id="about-us">
+        <h1>About Us</h1>
+        <p>We're a Bristol-based planetarium, and we love space! We have designed this website for all space lovers out
+            there!, offering educational entertainment of our vast galaxy for the public and students. This website is a part of our mission to make space education accessible and engaging for everyone. We hope you
+        enjoy exploring the wonders of the Milky Way with us!</p>
+        <p>All information on this site is for educational purposes only. and cited from Wikipedia. Here are the references below:</p>
+            <ul class="references">
+                <li><a href="https://en.wikipedia.org/wiki/Milky_Way">Milky Way - Wikipedia</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Mars">Mars - Wikipedia</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Earth">Earth - Wikipedia</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Jupiter">Jupiter - Wikipedia</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Neptune">Neptune - Wikipedia</a></li>
+                <li><a href="https://www.youtube.com/watch?v=0cokUvTLCx4&list=RD0cokUvTLCx4&start_radio=1">Musical Space Ambience - YouTube</a></li>
+            </ul>
+        <h1>Contact Us</h1>
+        <p>If you have any questions, suggestions, or just want to say hi, feel free to reach out to us!</p>
+        <ul class="contact-info">
+            <li>Email: <a href="mailto:joshlouiscontreras67@gmail.com">joshlouiscontreras67@gmail.com</a></li>
+            <li>Phone: +52 767 2008</li>
+            <li>Hello! I am Josh Louis R. Conteras and I've designed this project for our Web Programming Course, Summative Assessment 2!</li>
+            <li>For more information, check out my development document for this website!</li>
+        </ul>
+    </div>
+
+    <footer class="site-footer">    
+        <p>&copy; Big Planetarium — Bristol. Educational use. Video and image content credit: NASA / ESA / BBC.</p>
+    </footer>
+
+    <!-- Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol -->
+    <!-- Josh C. Was here -->

@@ -1,0 +1,43 @@
+
+/* Animationns a little bit of fun with the floating planets in the header, and the spinning logo in the footer. */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-8px) translateX(5px); }
+    50% { transform: translateY(-15px) translateX(-3px); }
+    75% { transform: translateY(-8px) translateX(8px); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-12px) translateX(-6px); }
+    50% { transform: translateY(-6px) translateX(12px); }
+    75% { transform: translateY(-18px) translateX(-2px); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-10px) translateX(8px); }
+    50% { transform: translateY(-20px) translateX(-8px); }
+    75% { transform: translateY(-5px) translateX(15px); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-9px) translateX(12px); }
+    50% { transform: translateY(-18px) translateX(-10px); }
+    75% { transform: translateY(-4px) translateX(6px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol */
+/* Josh C. Was here */
+
