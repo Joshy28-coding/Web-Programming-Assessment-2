@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #01012c, #000000);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Soft ambience: added small button on the bottom right. to toggle ambient music */
+.ambience-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(80, 194, 255, 0.5);
+    background: rgba(10, 10, 40, 0.8);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ambience-toggle:hover,
+.ambience-toggle:focus-visible {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(8, 65, 186);
+}
+.ambience-toggle[aria-pressed="true"] {
+    border-color: rgba(80, 194, 255, 1);
+    box-shadow: 0 0 14px rgba(8, 65, 186, 0.7);
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: -1;
+    pointer-events: none;
+    animation: fadeIn 2.5s ease-out;
+}
+
+/* Logo resolution and size adjusted to the nav bar, also assigning a subtle glow effect */
+/* Small logo found on the top left of the screen */
+/* Is actually a part of the nav bar */ 
+.logo {
+    margin-right: 60px;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    
+}
+.logo img {
+    width: 120%;
+    height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(80,194,255,0.8));
+}
+
+/* Top navigation bar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar a {
+    color: #e2f8ff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+.navbar a:hover,
+.navbar a:focus-visible {
+    background: rgba(80, 194, 255, 0.37);
+}
+
+.right { margin-left: auto; }  
+/* Josh was here */
+
+/* Hero planet sphere and intro card */
+
+.planet-hero {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 1.3fr;
+    gap: 48px;
+   align-items: center;
+}
+
+/* The sphere - with planet texture */
+.planet-sphere {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 380px;
+    justify-self: center;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Intro text + small content card */
+
+.planet-intro h1{
+    font-size: clamp(2.4rem, 5vm, 4rem);
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(80, 194, 255, 0.37);
+}
+
+.planet-intro .tagline {
+    font-size: 1.25rem;
+    color: rgb(171, 183, 255);
+    margin-bottom: 20px;
+}
+
+.planet-intro .intro-card {
+    background: rgba(0, 20, 31, 0.37);
+    border: 1px solid rgba(100, 150, 255, 0.25);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 0 20px rgba(80, 194, 255, 0.2);
+}
+
+/* planet detail */
+.planet-detail {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 40px 24px;
+    text-align: center;
+}
+.planet-detail h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    margin-bottom: 24px;
+    text-shadow: 0 0 18px rgba(80, 194, 255, 0.7);
+}
+.planet-detail .detail-card {
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(100, 150, 255, 0.25);
+}
+
+.planet-detail .detail-card p { margin-bottom: 14px; }
+.planet-detail .detail-card p:last-child { margin-bottom: 0; }
+
+/* More about the planet */
+
+.fact-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px 24px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(100, 150, 255, 0.25);
+}
+.fact-list li label {
+    display: block;
+    color: #50c2ff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/* Simple Site Footer */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: rgba(200, 200, 255, 0.6);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(100, 150, 255, 0.15);
+}
+
+/* Per-planet sphere textures */
+#sphere-mars    { background-image: url('../Pictures/Mars.png'); background-size: 120%;   box-shadow: 0 0 40px rgba(255, 100, 100, 0.55); }
+#sphere-earth   { background-image: url('../Pictures/earth.webp');  box-shadow: 0 0 40px rgba(0, 207, 86, 0.45); }
+#sphere-jupiter { background-image: url('../Pictures/jupiter.png'); box-shadow: 0 0 40px rgba(255, 200, 100, 0.5); }
+#sphere-neptune { background-image: url('../Pictures/neptune.jpg'); background-size: 120%; box-shadow: 0 0 40px rgba(0, 80, 255, 0.55); }
+
+/* Responsive: stack the hero on smaller screens */
+@media (max-width: 760px) {
+    .planet-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 30px;
+    }
+    .planet-sphere { 
+        max-width: 260px; 
+    }
+    .planet-intro {
+        text-align:center; 
+    }
+    .navbar ul { 
+        flex-wrap: wrap; 
+        gap: 12px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+    .navbar a {
+        padding: 0px 7.5px;
+    }
+    .logo {
+    display: none;
+    }
+    .logo img {
+    display: none;
+    }
+   .nav-links {
+       display:none;
+       flex-direction: column;
+       width: 100%;
+       gap: 10px;
+   }
+}
+
+/* Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol */
+/* Josh C. Was here */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Jupiter — Big Planetarium</title>
+    <link rel="stylesheet" href="Planetpages.css">
+    <link rel="stylesheet" href="../animations.css">
+    <link rel="icon" href="../Pictures/jupiter.png">
+</head>
+
+<body>
+    <!-- Ambient space music (shared across pages) -->
+    <audio id="ambience" loop preload="auto">
+    <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/ambienceaudio.MP3" type="audio/mpeg">
+    </audio>
+    <button id="ambienceToggle" class="ambience-toggle" aria-pressed="false"
+        aria-label="Play background music">
+    <span aria-hidden="true">🔇</span>
+    </button>
+    <script src="../ambience.js"></script>
+
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="logo"><a href="../index.html"><img src="../Pictures/logo.png" alt="Big Planetarium home"></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#planets-heading">Planets</a></li>
+                <li><a href="../index.html#gallery-heading">Video Gallery</a></li>
+                <li class="right"><a href="../about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Background video section -->
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/Star%20loop%20new.mp4" type="video/mp4">
+    </video>
+
+    <main id="main">
+        <!-- Hero planet sphere and intro card -->
+        <section class="planet-hero" aria-labelledby="planet-title">
+            <div class="planet-sphere" id="sphere-jupiter" role="img"></div>
+            <div class="planet-intro">
+                <h1 id="planet-title">Welcome to Jupiter!</h1>
+                <p class="tagline">The largest planet in our Solar System.</p>
+                <div class="intro-card">
+                    <p>Jupiter is the fifth planet from the Sun and by far the largest — a gas giant with a mass more
+                        than twice that of all the other planets combined. Its diameter is 11 times that of Earth and a
+                        tenth that of the Sun. Jupiter orbits the Sun at a distance of 5.20 AU (778.5 Gm), with an
+                        orbital period of 11.86 years. It is the third-brightest natural object in the Earth's night
+                        sky, after the Moon and Venus, and has been observed since prehistoric times. Its name derives
+                        from that of Jupiter, the chief deity of ancient Roman religion. </p><p><i>(Wikipedia Contributors, 2019)</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- long form content -->
+        <!-- All pages are very simillar to each other, they use the same structure with different descriptions -->
+        <section class="planet-detail" aria-labelledby="more-heading">
+            <h1 id="more-heading">Fun facts about Jupiter!</h1>
+            <div class="detail-card">
+                <p>Jupiter&#x27;s most famous feature is the Great Red Spot, a giant storm larger than Earth that has
+                    been raging for at least 350 years.</p>
+                <p>It has at least 95 known moons, including the four large Galilean moons — Io, Europa, Ganymede and
+                    Callisto — discovered by Galileo Galilei in 1610.</p>
+                <p>NASA&#x27;s Juno spacecraft has been orbiting Jupiter since 2016, mapping its magnetic field and
+                    peering beneath its swirling cloud tops.</p>
+                <ul class="fact-list">
+                    <li><label>Distance from Sun</label>778.5 million km</li>
+                    <li><label>Day length</label>9h 56m</li>
+                    <li><label>Moons</label>95+ known</li>
+                    <li><label>Diameter</label>139,820 km</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Big Planetarium — Bristol. Educational use. Image content credit: NASA / ESA / BBC.</p>
+    </footer>
+</body>
+</html>
+
+<!-- Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol -->
+    <!-- Josh C. Was here -->

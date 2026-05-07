@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mars - Big Planetarium</title>
+    <link rel="stylesheet" href="Planetpages.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="icon" href="../Pictures/Mars.png">
+</head>
+
+<body>
+    <!-- Ambient space music (shared across pages) -->
+    <audio id="ambience" loop preload="auto">
+    <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/ambienceaudio.MP3" type="audio/mpeg">
+    </audio>
+    <button id="ambienceToggle" class="ambience-toggle" aria-pressed="false"
+        aria-label="Play background music">
+    <span aria-hidden="true">🔇</span>
+    </button>
+    <script src="../ambience.js"></script>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="logo"><a href="../index.html"><img src="../Pictures/logo.png" alt="Big Planetarium home"></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#planets-heading">Planets</a></li>
+                <li><a href="../index.html#gallery-heading">Video Gallery</a></li>
+                <li class="right"><a href="../about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Background video section -->
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/Star%20loop%20new.mp4" type="video/mp4">
+    </video>
+
+    <main id="main">
+        <!-- Hero planet sphere and intro card -->
+        <section class="planet-hero" aria-labelledby="planet-title">
+            <div class="planet-sphere" id="sphere-mars" role="img"></div>
+            <div class="planet-intro">
+                <h1 id="planet-title">Welcome to Mars!</h1>
+                <p class="tagline">The Red Planet — fourth from the Sun.</p>
+                <div class="intro-card">
+                    <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, often
+                        called the Red Planet because of the iron oxide on its surface. At the average surface level the
+                        atmospheric pressure is a few thousandths of Earth's, atmospheric temperature ranges from -153
+                        to 20 °C (-243 to 68 °F), and cosmic radiation is high. Mars retains some water, in the
+                        ground as well as thinly in the atmosphere, forming cirrus clouds, fog, frost, larger polar
+                        regions of permafrost and ice caps (with seasonal CO2 snow), but no bodies of liquid surface
+                        water. Its surface gravity is roughly a third of Earth's or double that of the Moon. Its
+                        diameter, 6,779 km (4,212 mi), is about half the Earth's, or twice the Moon's, and its surface
+                        area is the size of all the dry land of Earth. </p><p><i>(Wikipedia Contributors, 2019)</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- long form content -->
+        <!-- All pages are very simillar to each other, they use the same structure with different descriptions -->
+        <section class="planet-detail" aria-labelledby="more-heading">
+            <h1 id="more-heading">Fun facts about Mars!</h1>
+            <div class="detail-card">
+                <p>Mars has the tallest volcano in the Solar System — Olympus Mons — standing roughly 22 km high, nearly
+                    three times the height of Mount Everest.</p>
+                <p>Although thin, the Martian atmosphere is mostly carbon dioxide, and the planet experiences seasons,
+                    polar ice caps, dust storms and weather patterns much like Earth&#x27;s.</p>
+                <p>Several rovers, including Curiosity and Perseverance, are actively exploring the Martian surface,
+                    searching for signs of ancient microbial life.</p>
+                <ul class="fact-list">
+                    <li><label>Distance from Sun</label>227.9 million km</li>
+                    <li><label>Day length</label>24h 37m</li>
+                    <li><label>Moons</label>2 (Phobos, Deimos)</li>
+                    <li><label>Diameter</label>6,779 km</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Big Planetarium — Bristol. Educational use. Image content credit: NASA / ESA / BBC.</p>
+    </footer>
+</body>
+</html>
+
+<!-- Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol -->
+    <!-- Josh C. Was here -->

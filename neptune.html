@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Neptune — Big Planetarium</title>
+    <link rel="stylesheet" href="Planetpages.css">
+    <link rel="stylesheet" href="../animations.css">
+    <link rel="icon" href="../Pictures/neptune.jpg">
+</head>
+
+<body>
+    <!-- Ambient space music (shared across pages) -->
+    <audio id="ambience" loop preload="auto">
+    <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/ambienceaudio.MP3" type="audio/mpeg">
+    </audio>
+    <button id="ambienceToggle" class="ambience-toggle" aria-pressed="false"
+        aria-label="Play background music">
+    <span aria-hidden="true">🔇</span>
+    </button>
+    <script src="../ambience.js"></script>
+
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="logo"><a href="../index.html"><img src="../Pictures/logo.png" alt="Big Planetarium home"></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#planets-heading">Planets</a></li>
+                <li><a href="../index.html#gallery-heading">Video Gallery</a></li>
+                <li class="right"><a href="../about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Background video section -->
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://github.com/Joshy28-coding/Web-Programming-Assessment-2/raw/refs/heads/main/Star%20loop%20new.mp4" type="video/mp4">
+    </video>
+
+    <main id="main">
+        <!-- Hero planet sphere and intro card -->
+        <section class="planet-hero" aria-labelledby="planet-title">
+            <div class="planet-sphere" id="sphere-neptune" role="img"></div>
+            <div class="planet-intro">
+                <h1 id="planet-title">Welcome to Neptune!</h1>
+                <p class="tagline">The windy, ice-blue eighth planet.</p>
+                <div class="intro-card">
+                    <p>Neptune is the eighth and farthest known planet from the Sun. It is an ice giant whose deep blue
+                        colour comes from methane in its upper atmosphere. the third-most-massive planet, and the
+                        densest giant planet. It is 17 times the mass of Earth. Compared to Uranus, its neighbouring ice
+                        giant, Neptune is slightly smaller, but more massive and dense. Being composed primarily of
+                        gases and liquids, it has no well-defined solid surface. Neptune orbits the Sun once every
+                        164.8 years at an orbital distance of 30.1 astronomical units (4.5 billion kilometres; 2.8
+                        billion miles). It is named after the Roman god of the sea and has the astronomical symbol ♆,
+                        representing Neptune's trident. </p><p><i>(Wikipedia Contributors, 2019)</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- long form content -->
+        <!-- All pages are very simillar to each other, they use the same structure with different descriptions -->
+        <section class="planet-detail" aria-labelledby="more-heading">
+            <h1 id="more-heading">Fun facts about Neptune!</h1>
+            <div class="detail-card">
+                <p>Neptune has the strongest winds in the Solar System, reaching speeds of around 2,100 km/h —
+                    supersonic by Earth standards.</p>
+                <p>It was the first planet located through mathematical prediction rather than direct observation,
+                    discovered in 1846 based on irregularities in Uranus&#x27;s orbit.</p>
+                <p>Neptune has 14 known moons; the largest, Triton, orbits backwards relative to Neptune&#x27;s
+                    rotation, suggesting it was captured from the Kuiper belt.</p>
+                <ul class="fact-list">
+                    <li><label>Distance from Sun</label>4.5 billion km</li>
+                    <li><label>Day length</label>16h 6m</li>
+                    <li><label>Moons</label>14 known</li>
+                    <li><label>Diameter</label>49,244 km</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Big Planetarium — Bristol. Educational use. Image content credit: NASA / ESA / BBC.</p>
+    </footer>
+</body>
+</html>
+
+<!-- Thank you for viewing my code! I had fun seeing it come to life! Not so much when things do not work and under pressure lol -->
+    <!-- Josh C. Was here -->
